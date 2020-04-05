@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--status="error" говорит о том. что по умолчанию в root logger будут передаваться сообщения инициализации log4j2 уровня error и выше.
+Если поставить status="debug", то увидим все -->
+<Configuration status="error" strict="true">
+    <Properties>
+        <Property name="basePath">log</Property>
+    </Properties>
+
+    <Appenders>
+        <Appender type="Console" name="CONSOLE">
+            <Layout type="PatternLayout" pattern="%m%n"/>
+        </Appender>
+
+        <Appender type="File" name="FILE_ERROR_LOGGER" fileName="${basePath}/travelbot_error.log">
+            <Layout type="PatternLayout" pattern="%d %p %C{1.} [%t] %m%n"/>
+        </Appender>
+
+        <Appender type="File" name="FILE_DEBUG_LOGGER" fileName="${basePath}/travelbot_debug.log">
+            <Layout type="PatternLayout" pattern="%d %p %C{1.} [%t] %m%n"/>
+        </Appender>
+    </Appenders>
+
+
+    <Loggers>
+        <Logger name="DEBUG_LOGGER" level="debug" additivity="false">
+            <AppenderRef ref="CONSOLE"/>
+        </Logger>
+        <Logger name="ERROR_LOGGER" level="error" additivity="false">
+            <AppenderRef ref="FILE_ERROR_LOGGER"/>
+        </Logger>
+
+        <Root level="debug">
+            <AppenderRef ref="DEBUG_LOGGER"/>
+        </Root>
+    </Loggers>
+
+</Configuration>

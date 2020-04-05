@@ -1,0 +1,183 @@
+{
+	"info": {
+		"_postman_id": "71614465-ae97-4adc-8917-ef5e00e39395",
+		"name": "resliv_city",
+		"description": "resliv test bot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "bot_API",
+			"item": [
+				{
+					"name": "get_messages_history",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.telegram.org/bot1001541449:AAHb8V78969JuDTrONF9er8ugrP0XVmhgyc/getUpdates",
+							"protocol": "https",
+							"host": [
+								"api",
+								"telegram",
+								"org"
+							],
+							"path": [
+								"bot1001541449:AAHb8V78969JuDTrONF9er8ugrP0XVmhgyc",
+								"getUpdates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_bot_info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.telegram.org/bot1001541449:AAHb8V78969JuDTrONF9er8ugrP0XVmhgyc/getMe",
+							"protocol": "https",
+							"host": [
+								"api",
+								"telegram",
+								"org"
+							],
+							"path": [
+								"bot1001541449:AAHb8V78969JuDTrONF9er8ugrP0XVmhgyc",
+								"getMe"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "database_API",
+			"item": [
+				{
+					"name": "get_cities",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cities/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cities",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_city",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cities/5e7f7a7f027c1f4a9b966951",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cities",
+								"5e7f7a7f027c1f4a9b966951"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add_city",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"name\": \"Норильск\",\n\"text\" : [\"Ээээ...\", \"Я, конечно, рад что знакомы с этим чудесным городом на севере России.\",\"А вы точно хотите туда отправиться?\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/cities/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cities",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_city",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"text\": [\"Этот город - совсем не курорт!\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/cities/5e875a8b94ddb51346eafebc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cities",
+								"5e875a8b94ddb51346eafebc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_city",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cities/5e8758df94ddb51346eafebb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cities",
+								"5e8758df94ddb51346eafebb"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

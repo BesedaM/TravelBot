@@ -44,7 +44,7 @@ public class CityService {
 
     public Optional<City> update(String id, City city) {
         Optional<City> oldCity = cityRepository.findById(id);
-        if (oldCity.isPresent() && city.getText() != null) {
+        if (oldCity.isPresent() && city.getText().size()>0) {
             oldCity.get().setText(city.getText());
             cityRepository.save(oldCity.get());
         }

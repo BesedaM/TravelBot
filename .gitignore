@@ -19,6 +19,5 @@ target/
 *.iml
 *.ipr
 **/target/
-**/test/
 .metadata
 .mvn
